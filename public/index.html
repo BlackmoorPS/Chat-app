@@ -2,11 +2,19 @@
 <html>
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=no">
     <title>chat app</title>
   </head>
   <body>
-    <p>welcome to the app</p>
+    <h1>welcome to the app</h1>
+    <form id="message-form" action="/index.html">
+      <p>Enter your name and message</p>
+    <input type="text" name="Name" placeholder="Name" />
+    <input type="text" name="Message" placeholder="Message" />
+    <button>submit</button>
+    </form>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/index.js"></script>
+    <script src="https://code.jquery.com/jquery-3.3.1.min.js"></script>
   </body>
 </html>
