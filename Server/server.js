@@ -12,13 +12,16 @@ app.use(express.static(publicpath));
 
 io.on('connection', (socket)=>{
   console.log('New user connected');
+  socket.emit('newmessage', createmessage('Admin','Welcome to the chat app'));
   socket.on('createmessage', (mail)=>{
-    socket.emit('backmsg', createmessage(mail.from, mail.text));
+    // socket.emit('backmsg', createmessage(mail.from, mail.text));
+    io.emit('newmessage', createmessage(mail.from,mail.text));
   });
   socket.on('disconnect', () => {
     console.log('User was disconnected');
   });
-  socket.emit('messagefromserver', createmessage('nodeserver','test msg from server'));
+  socket.broadcast.emit('newmessage', createmessage('Admin', 'New user joined'));
+
 });
 
 server.listen(port, ()=>{

@@ -6,12 +6,14 @@
     <title>chat app</title>
   </head>
   <body>
-    <h1>welcome to the app</h1>
+    <h1>welcome to the app</h1><br>
+    <p>Conversations</p>
+    <ol id="messages"></ol>
     <form id="message-form" action="/index.html">
-      <p>Enter your name and message</p>
-    <input type="text" name="Name" placeholder="Name" />
-    <input type="text" name="Message" placeholder="Message" />
-    <button>submit</button>
+      <p>Enter the message</p>
+    <!-- <input type="text" name="Name" placeholder="Name" /> -->
+    <input type="text" name="Message" placeholder="Message" autofocus autocomplete="off"/>
+    <button>send</button>
     </form>
     <script src="/socket.io/socket.io.js"></script>
     <script src="/index.js"></script>
